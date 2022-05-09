@@ -1,7 +1,6 @@
 class Question:
 
     def __init__(self, question, difficulty, correct_answer):
-
         self.question = question
         self.difficulty = int(difficulty)
         self.correct_answer = correct_answer

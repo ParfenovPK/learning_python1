@@ -3,6 +3,7 @@ from question import Question
 
 PATH = "questions.json"
 
+
 def load_data(path=PATH):
     """чтение данных из файла questions.json и сохранение их в список """
 
@@ -10,20 +11,21 @@ def load_data(path=PATH):
     with open(path, "r", encoding="utf8") as file:
         return json.load(file)
 
-#print(load_data(path="tests/questions.json"))
+
+# print(load_data(path="tests/questions.json"))
 
 def load_questions(path=PATH):
-
     questions_data = load_data(path)
     questions = []
     # переводим список словарей в список экземпляров класса Question
     for question_data in questions_data:
-
         question = Question(question_data["q"], question_data["d"], question_data["a"])
         questions.append(question)
 
     return questions
-#print(load_questions(path="tests/questions.json"))
+
+
+# print(load_questions(path="tests/questions.json"))
 
 def build_statistics(questions):
     """ выводится статистика на основе списка questions"""
